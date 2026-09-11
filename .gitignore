@@ -1,0 +1,6 @@
+.idea
+launcher/target
+launcher/Cargo.lock
+CopilotLauncherMSIX/Binary/launcher.exe
+CopilotKeyRemapCert.pfx
+CopilotLauncherMSIX.msix

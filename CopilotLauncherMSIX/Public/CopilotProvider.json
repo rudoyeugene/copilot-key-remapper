@@ -1,0 +1,7 @@
+{
+  "id": "CopilotKeyToGemini",
+  "displayName": "Copilot Key to Google Gemini",
+  "description": "Custom Copilot key handler",
+  "entryPoint": "Binary\\launcher.exe",
+  "publisher": "EugeneRudo"
+}

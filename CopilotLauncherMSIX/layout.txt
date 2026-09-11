@@ -1,0 +1,5 @@
+[Files]
+Package.appxmanifest CopilotLauncherMSIX\Package.appxmanifest
+Assets\Square44x44Logo.png CopilotLauncherMSIX\Assets\Square44x44Logo.png
+Public\CopilotProvider.json CopilotLauncherMSIX\Public\CopilotProvider.json
+Binary\launcher.exe CopilotLauncherMSIX\Binary\launcher.exe
