@@ -7,9 +7,9 @@
         IgnorableNamespaces="uap uap3 rescap">
 
   <Identity
-          Name="CopilotKeyToGemini"
-          Publisher="CN=EugeneRudo"
-          Version="0.0.0.1" />
+          Name="EugeneRudo.CopilotKeytoGoogleGemini"
+          Publisher="CN=8C2213FA-9986-4D7F-9A2C-4C690B7E5BF5"
+          Version="1.0.0.0" ProcessorArchitecture="x64" />
 
   <Properties>
     <DisplayName>Copilot Key to Google Gemini</DisplayName>
