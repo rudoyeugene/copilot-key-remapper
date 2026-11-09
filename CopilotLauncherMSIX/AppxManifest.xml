@@ -9,7 +9,7 @@
   <Identity
           Name="EugeneRudo.CopilotKeytoGoogleGemini"
           Publisher="CN=8C2213FA-9986-4D7F-9A2C-4C690B7E5BF5"
-          Version="1.0.0.0" ProcessorArchitecture="x64" />
+          Version="1.0.1.0" ProcessorArchitecture="arm64" />
 
   <Properties>
     <DisplayName>Copilot Key to Google Gemini</DisplayName>
