@@ -1,9 +1,9 @@
 #![windows_subsystem = "windows"]
 
-use std::process::Command;
 use std::path::PathBuf;
+use std::process::Command;
 use windows_sys::Win32::UI::WindowsAndMessaging::{
-    MessageBoxW, MB_OK, MB_ICONERROR,
+    MessageBoxW, MB_ICONERROR, MB_OK,
 };
 
 fn message_box(title: &str, text: &str) {
@@ -26,25 +26,24 @@ fn to_wide(s: &str) -> Vec<u16> {
 }
 
 fn main() {
-    // Resolve per-user LocalAppData path
-    let local_app_data = std::env::var("LOCALAPPDATA")
-        .expect("LOCALAPPDATA environment variable not found");
+    let mut gemini_path = match std::env::var("LOCALAPPDATA") {
+        Ok(val) => PathBuf::from(val),
+        Err(_) => {
+            message_box("Error", "Gemini Desktop not found, exiting");
+            return;
+        }
+    };
 
-    // Build full path to Gemini.exe
-    let mut gemini_path = PathBuf::from(local_app_data);
     gemini_path.push("Google");
     gemini_path.push("Gemini");
     gemini_path.push("Gemini.exe");
 
-    // Check existence
     if !gemini_path.exists() {
-        message_box(
-            "Gemini not found",
-            "Gemini.exe was not found in:\n%LOCALAPPDATA%\\Google\\Gemini\n\nPlease install Gemini or adjust your setup."
-        );
+        message_box("Error", "Gemini Desktop not found, exiting");
         return;
     }
 
-    // Launch Gemini
-    let _ = Command::new(&gemini_path).spawn();
+    if Command::new(&gemini_path).spawn().is_err() {
+        message_box("Error", "Gemini Desktop not found, exiting");
+    }
 }
